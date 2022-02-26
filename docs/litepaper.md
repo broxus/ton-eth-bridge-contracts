@@ -28,11 +28,7 @@ The basis for the V2 operation is:
 
 The task of relays is monitoring and confirmation of a set of events\* in EVM networks and Everscale. For example, in case the user deposits DAI into a special smart contract (Vault) on the Ethereum side, each relay sends a special transaction to the Everscale network. This transaction confirms the fact of a deposit event on the Ethereum network. As soon as quorum is reached, the DAI token is automatically minted on the Everscale side.
 
-![EVM-Everscale-token-transfer](assets/Broxus-Bridge-litepaper-06-oct-ETH-Everscale-token-transfer.drawio.png)
-
 In the Everscale -> EVM direction, the bridge works analogously, with one exception. Due to potentially high network fees, relays do not send transactions to the EVM networks. Instead, relays have to sign specific EVM-compatible payload with their key, and put the signature in a special contract in the Everscale network. Each connected EVM network has a special contract (Bridge), which stores the public keys of the relays, so it's possible to verify, that the signature is made by the actual relay. Anyone can send a payload and a list of signatures to Vault, and if the signatures are correct, Vault will send tokens to the user's Ethereum address.
-
-![Everscale-EVM-token-transfer](assets/Broxus-Bridge-litepaper-06-oct-Everscale-ETH-token-transfer.drawio.png)
 
 \* The list of events is stored on-chain on the Everscale side. The DAO can add new events to this list and delete old ones
 
@@ -58,7 +54,7 @@ The appendix considers a scenario for managing a relay with 100,000 Bridge token
 
 The first version of bridge only worked between Ethereum and Everscale. Our new protocol allows to connect any EVM compatible blockchain to the Everscale bridge V2 (such as Polygon, Binance Smart Chain, xDai, Fantom, etc.).
 
-![EVM-star](assets/Broxus-Bridge-litepaper-06-oct-EVM-star.drawio.png)
+![EVM-star](<../.gitbook/assets/spaces\_xQmwR3f5EQDxy3pZatqe\_uploads\_git-blob-f2996416499a69a4173341c4939392f0b0f2fbf0\_Broxus-Bridge-litepaper-06-oct-EVM-star.drawio копия.png>)
 
 The number of blockchains that can be connected is unlimited. The decision to connect a new network is made by the DAO. In fact any EVM blockchains can be interconnected without the need to develop any specialized bridges.
 
